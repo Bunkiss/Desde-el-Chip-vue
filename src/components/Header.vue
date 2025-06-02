@@ -18,9 +18,9 @@
       <input type="text" placeholder="Buscar productos..." class="buscador" />
     </div>
 
-    <div class="iconos-menu"> <!-- serán enlaces a nuevos componentes -->
-      <i class="fas fa-user"></i> <!-- Login.vue -->
-      <i class="fas fa-shopping-cart"></i> <!-- Carrito.vue -->
+    <div> <!-- serán enlaces a nuevos componentes -->
+      <div id="LoginIcon" class="fas fa-user"></div> <!-- Login.vue -->
+      <i id="CarritoIcon" class="fas fa-shopping-cart"></i> <!-- Carrito.vue -->
     </div>
   </header>
 </template>
@@ -132,8 +132,8 @@ onBeforeUnmount(() => {
   color: var(--ocaso-medio-color);
 }
 
-.iconos-menu i {
-  margin-left: 15px;
+#LoginIcon, #CarritoIcon {
+  padding-left: 10px;
   cursor: pointer;
 }
 </style>

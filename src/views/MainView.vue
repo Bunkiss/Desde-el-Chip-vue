@@ -1,10 +1,15 @@
 <template>
   <main class="main">
-    <h1>Contenido principal</h1>
+    <BannerOfertas/>
+    <BannerServicios/>
+    <Catalogo/>
   </main>
 </template>
 
 <script setup>
+import BannerOfertas from '@/components/BannerOfertas.vue';
+import BannerServicios from '@/components/BannerServicios.vue';
+import Catalogo from '@/components/Catalogo.vue';
 </script>
 
 <style scoped>

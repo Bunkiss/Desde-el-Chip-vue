@@ -7,8 +7,8 @@
         <a href="#">Términos y condiciones</a>
       </div>
       <div class="footer-redes">
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-x-twitter"></i>
+        <i class="fab fa-instagram" id="igIcon"></i>
+        <i class="fab fa-x-twitter" id="twitterIcon"></i>
       </div>
     </div>
     <div class="footer-bottom">
@@ -66,4 +66,10 @@
   font-size: 12px;
   padding: 5px;
 }
+
+#igIcon, #twitterIcon {
+  padding-left: 10px;
+  cursor: pointer;
+}
+
 </style>
