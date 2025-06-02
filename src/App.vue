@@ -1,13 +1,12 @@
 <template>
   <div class="container">
-    <Header></Header>
-    <MainView></MainView>
-    <Footer></Footer>
+    <Header />
+    <router-view />
+    <Footer />
   </div>
 </template>
 
 <script setup>
-import MainView from './views/MainView.vue';
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
 </script>

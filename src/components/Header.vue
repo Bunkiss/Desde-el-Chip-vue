@@ -1,10 +1,11 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <header class="header">
     <div class="hamburger-menu">
-      <button class="hamburger-buttom" @click.stop="toggleMenu">&#9776;</button>
+      <button class="hamburger-buttom" @click.stop="toggleMenu">&#9776;</button> <!-- toggleMenu: función que alterna el valor de menuVisible.-->
       <nav class="hamburger-desplegado" v-show="menuVisible" @click.stop> <!-- v-show="menuVisible" en lugar de display: none -->
         <ul>
-          <li><a href="#">Categorías</a></li> <!-- Este router a categorias hacerlo funcional -->
+          <li><router-link to="/categorias">Categorías</router-link></li> <!-- Este router a categorias hacerlo funcional -->
           <li><a href="#">Computadoras</a></li>
           <li><a href="#">Periféricos</a></li>
           <li><a href="#">Arma tu PC</a></li>
@@ -14,7 +15,7 @@
     </div>
 
     <div class="logo-menu">
-      <router-link to="../views/MainView.vue" class="logo">Desde el Chip</router-link>
+      <router-link to="/" class="logo">Desde el Chip</router-link>
       <input type="text" placeholder="Buscar productos..." class="buscador" />
     </div>
 
@@ -28,28 +29,28 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 
-const menuVisible = ref(false);
+const menuVisible = ref(false); // ref crea una referencia reactiva. Vue "reacciona" cuando menuVisible.value cambia.
 
 const toggleMenu = () => {
-  menuVisible.value = !menuVisible.value;
+  menuVisible.value = !menuVisible.value; //Invierte el valor: si está true, lo pone false, y viceversa.
 };
 
 const handleClickOutside = (e) => {
   const menu = document.querySelector('.hamburger-desplegado');
   const button = document.querySelector('.hamburger-buttom');
 
-  if (menu && button && !menu.contains(e.target) && !button.contains(e.target)) {
+  if (menu && button && !menu.contains(e.target) && !button.contains(e.target)) { //menu.contains(e.target) verifica si el clic fue dentro del menú.
     menuVisible.value = false;
   }
-};
+}; //e.target: el elemento donde ocurrió el clic. Si el clic ocurre fuera del menú y del botón, se cierra el menú
 
 onMounted(() => {
   document.addEventListener('click', handleClickOutside);
-});
+}); //onMounted: se ejecuta cuando el componente entra al DOM - empieza a escuchar clics globales.
 
 onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside);
-});
+}); //onBeforeUnmount: se ejecuta justo antes de destruir el componente → elimina el event listener.
 </script>
 
 

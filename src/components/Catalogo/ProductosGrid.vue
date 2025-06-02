@@ -5,16 +5,16 @@
       :key="producto.id"
       class="producto"
     >
-      <a :href="`/producto/${producto.id}`">
+      <router-link class="link" :to="`/producto/${producto.id}`">
         <img
           :src="producto.image_urls?.[0] || 'https://via.placeholder.com/200x150'"
           :alt="producto.title"
         />
         <h3>{{ producto.title }}</h3>
         <p v-if="producto.notebooksTypes?.length">
-          {{ mostrarPrecio(producto.notebooksTypes[0].price) }}
+          {{ mostrarPrecio(minimoPrecio(producto.notebooksTypes)) }}
         </p>
-      </a>
+      </router-link>
     </div>
   </section>
 </template>
@@ -24,8 +24,13 @@ defineProps({ productos: Array })
 
 const mostrarPrecio = (precio) => {
   if (!precio) return '';
-  return `$${Number(precio).toLocaleString()}`;
+  return `$${Number(precio).toLocaleString()}`; //Convierte el número a formato legible con puntos/miles, por ejemplo: 109999 = "109.999".
 };
+
+const minimoPrecio = (tipos) => {
+  return Math.min(...tipos.map(t => t.price)); //tipos.map(t => t.price) transforma el array a uno solo con los precios
+}; //el operador ... (spread) desarma el array en argumentos para Math.min
+
 </script>
 
 <style scoped>
@@ -53,7 +58,7 @@ const mostrarPrecio = (precio) => {
   justify-content: space-between;
 }
 
-.producto a {
+.link {
   text-decoration: none;
   color: var(--oscuro-text-color);
   width: 100%;

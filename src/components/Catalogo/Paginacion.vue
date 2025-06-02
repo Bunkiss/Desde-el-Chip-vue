@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="paginacion">
     <button @click="irPagina(paginaActual - 1)" :disabled="paginaActual === 1">&laquo;</button>
@@ -16,7 +17,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+//import { ref, watch } from 'vue';
 
 const props = defineProps({
   totalPaginas: Number,

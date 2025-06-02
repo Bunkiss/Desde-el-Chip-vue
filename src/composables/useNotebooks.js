@@ -7,4 +7,4 @@ export const useNotebooks = async () => {
   notebooksStore.setData(data);
 };
 
-
+// Actúa como un puente entre el helper (que obtiene los datos) y el store (que los guarda)

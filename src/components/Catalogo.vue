@@ -1,8 +1,9 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <section class="catalogo">
     <Categorias />
-    <ProductosGrid :productos="productosPaginados"/>
-    <Paginacion 
+    <ProductosGrid :productos="productosPaginados"/> <!-- envia el array ya paginado como prop y lo renderiza -->
+    <Paginacion
       :paginaActual="paginaActual"
       :totalPaginas="totalPaginas"
       @cambiarPagina="cambiarPagina"
@@ -37,6 +38,9 @@ const totalPaginas = computed(() =>
   Math.ceil(notebooksStore.data.length / porPagina)
 );
 
+// computed para:
+// Calcula qué productos mostrar según la página.
+// Calcula cuántas páginas hay.
 
 function cambiarPagina(pagina) {
   paginaActual.value = pagina;

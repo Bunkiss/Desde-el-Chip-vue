@@ -27,7 +27,7 @@
   padding: 20px;
   margin-top: 80px;
   margin-bottom: 100px;
-  background-color: var(--ocaso-medio-color);
+  background-color: var(--ocaso-claro-color);
   width: 100%;
   border-radius: 5px;
 }

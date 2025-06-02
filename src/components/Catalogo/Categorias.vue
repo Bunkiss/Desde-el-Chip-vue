@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="categorias-wrapper">
     <button class="categorias-flecha flecha-izq" @click="scrollIzquierda">&lt;</button>
@@ -13,7 +14,7 @@
     <button class="categorias-flecha flecha-der" @click="scrollDerecha">&gt;</button>
   </div>
 </template>
-<!-- --------------------------------------ERROR EN SCROLL-------------------------------------- -->
+
 <script setup>
 import { ref } from 'vue';
 

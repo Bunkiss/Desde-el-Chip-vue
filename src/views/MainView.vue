@@ -14,7 +14,7 @@ import Catalogo from '@/components/Catalogo.vue';
 
 <style scoped>
 .main {
-  background-color: var(--ocaso-claro-color);
+  background-color: var(--ocaso-medio-color);
   padding: 20px;
 }
 </style>
