@@ -33,16 +33,20 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watchEffect } from 'vue';
+
 const props = defineProps({
   producto: Object
 });
 
-const mainImage = ref(props.producto.image_urls[0]);
+const mainImage = ref('');
 
-watch(() => props.producto.image_urls, (nuevas) => {
-  mainImage.value = nuevas[0];
+watchEffect(() => {
+  if (props.producto?.image_urls?.length) {
+    mainImage.value = props.producto.image_urls[0];
+  }
 });
+
 </script>
 
 <style scoped>

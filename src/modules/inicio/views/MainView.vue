@@ -7,9 +7,9 @@
 </template>
 
 <script setup>
-import BannerOfertas from '@/components/BannerOfertas.vue';
-import BannerServicios from '@/components/BannerServicios.vue';
-import Catalogo from '@/components/Catalogo.vue';
+import BannerOfertas from '@/modules/inicio/components/BannerOfertas.vue';
+import BannerServicios from '@/modules/inicio/components/BannerServicios.vue';
+import Catalogo from '@/modules/inicio/components/Catalogo.vue';
 </script>
 
 <style scoped>
